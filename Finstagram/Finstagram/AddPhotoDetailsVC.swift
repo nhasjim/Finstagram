@@ -34,6 +34,8 @@ class AddPhotoDetailsVC: UIViewController, UITextViewDelegate {
         //============= IMAGE STUFF
         print(resizedImage.debugDescription)
         finstaPic.image = resizedImage;
+        finstaPic.layer.cornerRadius = 6;
+        finstaPic.clipsToBounds = true;
 
         // Do any additional setup after loading the view.
     }
