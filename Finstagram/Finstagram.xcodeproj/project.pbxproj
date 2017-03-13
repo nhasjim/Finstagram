@@ -17,6 +17,9 @@
 		6EE689351E761ACB0086AE81 /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE689341E761ACB0086AE81 /* NewsFeedVC.swift */; };
 		6EE689371E7627290086AE81 /* UploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE689361E7627290086AE81 /* UploadPhotoVC.swift */; };
 		6EE6893A1E7668950086AE81 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE689391E7668950086AE81 /* Post.swift */; };
+		6EE6893C1E76719A0086AE81 /* Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6893B1E76719A0086AE81 /* Get.swift */; };
+		6EE6893E1E7677E00086AE81 /* FinstaPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6893D1E7677E00086AE81 /* FinstaPostCell.swift */; };
+		6EE689401E77204A0086AE81 /* AddPhotoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6893F1E77204A0086AE81 /* AddPhotoDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		6EE689341E761ACB0086AE81 /* NewsFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
 		6EE689361E7627290086AE81 /* UploadPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoVC.swift; sourceTree = "<group>"; };
 		6EE689391E7668950086AE81 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6EE6893B1E76719A0086AE81 /* Get.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Get.swift; sourceTree = "<group>"; };
+		6EE6893D1E7677E00086AE81 /* FinstaPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinstaPostCell.swift; sourceTree = "<group>"; };
+		6EE6893F1E77204A0086AE81 /* AddPhotoDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoDetailsVC.swift; sourceTree = "<group>"; };
 		92BB4F089B5C550A2024A4A6 /* Pods-Finstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finstagram/Pods-Finstagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,7 @@
 			children = (
 				6E2668D71E726C6B00FC3518 /* ViewController.swift */,
 				6EE689361E7627290086AE81 /* UploadPhotoVC.swift */,
+				6EE6893F1E77204A0086AE81 /* AddPhotoDetailsVC.swift */,
 				6E2844F81E7285CE007A7AE1 /* LoginVC.swift */,
 				6EE689341E761ACB0086AE81 /* NewsFeedVC.swift */,
 			);
@@ -103,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				6EE689391E7668950086AE81 /* Post.swift */,
+				6EE6893B1E76719A0086AE81 /* Get.swift */,
+				6EE6893D1E7677E00086AE81 /* FinstaPostCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -242,8 +251,11 @@
 			files = (
 				6EE689351E761ACB0086AE81 /* NewsFeedVC.swift in Sources */,
 				6EE6893A1E7668950086AE81 /* Post.swift in Sources */,
+				6EE6893E1E7677E00086AE81 /* FinstaPostCell.swift in Sources */,
 				6E2668D81E726C6B00FC3518 /* ViewController.swift in Sources */,
+				6EE6893C1E76719A0086AE81 /* Get.swift in Sources */,
 				6EE689371E7627290086AE81 /* UploadPhotoVC.swift in Sources */,
+				6EE689401E77204A0086AE81 /* AddPhotoDetailsVC.swift in Sources */,
 				6E2668D61E726C6B00FC3518 /* AppDelegate.swift in Sources */,
 				6E2844F91E7285CE007A7AE1 /* LoginVC.swift in Sources */,
 			);
