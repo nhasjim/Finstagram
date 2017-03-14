@@ -19,12 +19,18 @@ class NewsFeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         tableView.delegate=self
         tableView.dataSource=self
+        self.tableView.estimatedRowHeight = 350
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         getPosts()
 
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        getPosts()
+    }
+    
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOutInBackground { (error: Error?) in
         }
@@ -44,8 +50,6 @@ class NewsFeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource 
             if let postsFromDB = postsFromDB {
                 // do something with the data fetched
                 self.finstaPosts = postsFromDB
-                print("getting Posts")
-                print((self.finstaPosts?.count)!)
                 self.tableView.reloadData()
 
             } else {
@@ -57,11 +61,8 @@ class NewsFeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource 
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let posts = finstaPosts {
-            print(posts.count)
             return posts.count;
         } else {
-            print("0")
-
             return 0
         }
         
@@ -74,7 +75,6 @@ class NewsFeedVC: UIViewController,  UITableViewDelegate, UITableViewDataSource 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FinstaPostCell") as! FinstaPostCell
         let finstaPost = finstaPosts?[indexPath.row]
-
         cell.instagramPost = finstaPost as! PFObject
         
         return cell;

@@ -10,6 +10,9 @@ import UIKit
 
 class UploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var photosButton: UIButton!
+    @IBOutlet weak var cameraButton: UIButton!
+    
     var uploadedImage: UIImage?
     var resizedImage: UIImage?
 
@@ -56,8 +59,12 @@ class UploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
 //        Post.postUserImage(image: originalImage, withCaption: "Testing") { (success: Bool, error: Error?) in
 //        }
-        self.uploadedImage = originalImage
-        self.resizedImage = editedImage
+        print("og size  + \(originalImage.size)")
+        print("edited size  + \(editedImage.size)")
+
+        self.uploadedImage = resize(image: originalImage, newSize: CGSize(width: 800, height: 800))
+        self.resizedImage = resize(image: editedImage, newSize: CGSize(width: 800, height: 800))
+
     
         // Do something with the images (based on your use case)
         
@@ -65,8 +72,23 @@ class UploadPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.performSegue(withIdentifier: "AddDetailsSegue", sender: nil)
 
         dismiss(animated: true, completion: nil)
-
+    }
     
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
+    }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+    
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
     }
     
     

@@ -10,7 +10,7 @@ import UIKit
 
 class AddPhotoDetailsVC: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var finstaPic: UIImageView!    
+    @IBOutlet weak var finstaPic: UIImageView!
     @IBOutlet weak var captionField: UITextView!
     @IBOutlet weak var locationField: UITextField!
     
@@ -51,6 +51,13 @@ class AddPhotoDetailsVC: UIViewController, UITextViewDelegate {
     @IBAction func onCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
 
+    }
+    @IBAction func onShareClick(_ sender: Any) {
+        Post.postUserImage(image: originalImage, withCaption: captionField.text) { (success: Bool, error: Error?) in
+            
+            
+            self.performSegue(withIdentifier: "postSegue", sender: nil)
+        }
     }
     
 
